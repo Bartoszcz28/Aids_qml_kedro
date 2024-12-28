@@ -1,0 +1,115 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+#
+# We support interacting with a variety of data stores including local file systems, cloud, network and HDFS
+#
+# An example data set definition can look as follows:
+#
+#bikes:
+#  type: pandas.CSVDataset
+#  filepath: "data/01_raw/bikes.csv"
+#
+#weather:
+#  type: spark.SparkDataset
+#  filepath: s3a://your_bucket/data/01_raw/weather*
+#  file_format: csv
+#  credentials: dev_s3
+#  load_args:
+#    header: True
+#    inferSchema: True
+#  save_args:
+#    sep: '|'
+#    header: True
+#
+#scooters:
+#  type: pandas.SQLTableDataset
+#  credentials: scooters_credentials
+#  table_name: scooters
+#  load_args:
+#    index_col: ['name']
+#    columns: ['name', 'gear']
+#  save_args:
+#    if_exists: 'replace'
+#    # if_exists: 'fail'
+#    # if_exists: 'append'
+#
+# The Data Catalog supports being able to reference the same file using two different Dataset implementations
+# (transcoding), templating and a way to reuse arguments that are frequently repeated. See more here:
+# https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# companies:
+#   type: pandas.CSVDataset
+#   filepath: data/01_raw/companies.csv
+
+# reviews:
+#   type: pandas.CSVDataset
+#   filepath: data/01_raw/reviews.csv
+
+# shuttles:
+#   type: pandas.ExcelDataset
+#   filepath: data/01_raw/shuttles.xlsx
+#   load_args:
+#     engine: openpyxl
+
+aids:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/AIDS_Classification.csv
+
+preprocessed_aids:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/preprocess_aids.parquet
+
+model_input_table:
+  type: pandas.ParquetDataset
+  filepath: data/03_primary/model_input_table.parquet
+
+X_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_train.parquet
+
+X_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/X_test.parquet
+
+y_train:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_train.parquet
+
+y_test:
+  type: pandas.ParquetDataset
+  filepath: data/05_model_input/y_test.parquet
+
+neural_network_model_1:
+  type: pickle.PickleDataset
+  filepath: data/06_models/neural_network_model_1.pickle
+  versioned: true
+
+neural_network_model_2:
+  type: pickle.PickleDataset
+  filepath: data/06_models/neural_network_model_2.pickle
+  versioned: true
+
+neural_network_model_3:
+  type: pickle.PickleDataset
+  filepath: data/06_models/neural_network_model_3.pickle
+  versioned: true
+
+quantum_network_model_1:
+  type: pickle.PickleDataset
+  filepath: data/06_models/quantum_network_model_1.pickle
+  versioned: true
+
+quantum_network_model_2:
+  type: pickle.PickleDataset
+  filepath: data/06_models/quantum_network_model_2.pickle
+  versioned: true
+
+quantum_network_model_3:
+  type: pickle.PickleDataset
+  filepath: data/06_models/quantum_network_model_3.pickle
+  versioned: true
+# output_pdf:
+#   type: kedro.extras.datasets.text.TextDataSet # Możesz dostosować typ w zależności od preferencji
+#   filepath: data/08_reporting/model_report.pdf
