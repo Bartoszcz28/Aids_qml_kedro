@@ -1,21 +1,11 @@
 # qml
 
-[![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
-
 ## Overview
 
-This is your new Kedro project, which was generated using `kedro 0.19.10`.
+This Kedro project focuses on training and comparing the performance of three classical neural networks and three quantum neural networks. The goal is to evaluate and contrast their capabilities using the provided dataset. While the default Kedro project structure has been retained, the data and computations have been tailored to fit this specific experiment.
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+![image](https://github.com/user-attachments/assets/c9563a15-2f8b-4577-8b4d-fb01e349bf80)
 
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
 
 ## How to install dependencies
 
@@ -49,7 +39,6 @@ To configure the coverage threshold, look at the `.coveragerc` file.
 
 To see and update the dependency requirements for your project use `requirements.txt`. You can install the project requirements with `pip install -r requirements.txt`.
 
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
 
 ## How to work with Kedro and notebooks
 
@@ -90,11 +79,6 @@ And if you want to run an IPython session:
 kedro ipython
 ```
 
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
 > *Note:* Your output cells will be retained locally.
 
-## Package your Kedro project
 
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html)
